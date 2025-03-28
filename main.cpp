@@ -161,8 +161,6 @@ int main(int argc, char* argv[]) {
     file.close();
     if (TTF_Init() == -1) return -1;
     TTF_Font* font = TTF_OpenFont("letter.ttf", 28);
-    TTF_Font* fonts = TTF_OpenFont("letter.ttf", 56);
-
     if (!font) return -1;
     SDL_Init(SDL_INIT_AUDIO);
     Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048);
@@ -273,8 +271,6 @@ int main(int argc, char* argv[]) {
             Renderscore(renderer, font, Score,50,50);
             string Highestscore = "Highest score is: " + to_string(highestscore);
             Renderscore(renderer,font,Highestscore,300,50);
-            Renderscore(renderer,fonts,"                         ^",108,565);
-            Renderscore(renderer,fonts,"Game code by An:)))",100,580);
             Renderscore(renderer,font,"Press Enter to start game",300,300);
             SDL_RenderPresent(renderer);
             continue;
